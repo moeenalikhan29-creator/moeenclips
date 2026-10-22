@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09091b">
+  <title>MoeenClips — Watch. Explore. Enjoy.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="MoeenClips home"><span class="brand-mark">▶</span><span>moeen<span class="purple">clips</span></span></a>
+    <form class="search" id="searchForm"><span>⌕</span><input id="searchInput" type="search" placeholder="Search videos, creators..." aria-label="Search videos"><button type="submit">Search</button></form>
+    <div class="top-actions"><button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☼</button><button class="upload-btn" id="uploadOpen">＋ <span>Upload</span></button><button class="avatar" title="Your profile">M</button></div>
+  </header>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <p class="side-label">MENU</p>
+      <button class="nav-item active" data-filter="all">⌂ <span>Home</span></button>
+      <button class="nav-item" data-filter="shorts">▣ <span>Shorts & Reels</span></button>
+      <button class="nav-item" data-filter="trending">↗ <span>Trending</span></button>
+      <button class="nav-item" data-filter="music">♫ <span>Music</span></button>
+      <button class="nav-item" data-filter="gaming">♧ <span>Gaming</span></button>
+      <div class="side-divider"></div>
+      <p class="side-label">YOUR SPACE</p>
+      <button class="nav-item" id="savedBtn">♡ <span>Saved videos</span></button>
+      <button class="nav-item" id="historyBtn">◷ <span>Watch history</span></button>
+      <div class="sidebar-note"><div class="note-icon">✦</div><strong>Your next favorite video is here.</strong><p>Discover creators, ideas and moments worth sharing.</p></div>
+      <p class="side-footer">© 2026 MoeenClips</p>
+    </aside>
+    <main class="main-content">
+      <section class="welcome">
+        <div class="welcome-copy"><span class="eyebrow"><span class="live-dot"></span> YOUR DAILY DOSE OF VIDEO</span><h1>Watch something<br><span>worth your time.</span></h1><p>Fresh clips, big ideas and creators you’ll love — all in one place.</p><div class="welcome-buttons"><button class="primary-btn" id="exploreBtn">Explore videos <span>↗</span></button><button class="ghost-btn" id="heroUpload">＋ Upload a clip</button></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="hero-play">▶</div><div class="floating-card card-a"><span>▶</span><div><b>Discover</b><small>Something new</small></div></div><div class="floating-card card-b"><span>✦</span><div><b>Made for you</b><small>Your next favorite</small></div></div><div class="sound-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      </section>
+      <section class="content-section">
+        <div class="section-heading"><div><p class="eyebrow">THE GOOD STUFF</p><h2 id="feedTitle">Recommended for you</h2></div><div class="filter-chips"><button class="chip active" data-filter="all">For you</button><button class="chip" data-filter="shorts">Shorts</button><button class="chip" data-filter="music">Music</button><button class="chip" data-filter="gaming">Gaming</button></div></div>
+        <div class="video-grid" id="videoGrid"></div>
+        <div class="empty-state hidden" id="emptyState"><div>⌕</div><h3>No videos found</h3><p>Try another search or category.</p><button class="ghost-btn" id="resetSearch">Show all videos</button></div>
+      </section>
+      <section class="creator-banner"><div class="creator-icon">✦</div><div><h3>Your story deserves a screen.</h3><p>Have a clip to share? Add it to your local demo feed.</p></div><button class="primary-btn" id="bannerUpload">Create a post <span>↗</span></button></section>
+      <footer class="mobile-footer">MoeenClips <span>•</span> Watch. Explore. Enjoy.</footer>
+    </main>
+  </div>
+  <nav class="mobile-nav"><button class="active" data-filter="all">⌂<small>Home</small></button><button data-filter="shorts">▣<small>Shorts</small></button><button id="mobileUpload">＋<small>Upload</small></button><button id="mobileSaved">♡<small>Saved</small></button></nav>
+  <dialog id="uploadDialog" class="modal"><form id="uploadForm" method="dialog"><div class="modal-head"><div><p class="eyebrow">CREATOR STUDIO</p><h2>Upload a clip</h2></div><button type="button" class="close-btn" id="uploadClose">×</button></div><label class="upload-drop" for="videoFile"><span class="upload-symbol">↑</span><strong>Choose a video from your device</strong><small>Your file stays in this browser demo; it is not published online.</small><input id="videoFile" type="file" accept="video/*"></label><label class="field-label" for="videoTitle">Video title</label><input class="text-field" id="videoTitle" maxlength="90" placeholder="Give your clip a title" required><label class="field-label" for="videoCategory">Category</label><select class="text-field" id="videoCategory"><option value="shorts">Shorts & Reels</option><option value="music">Music</option><option value="gaming">Gaming</option><option value="trending">Trending</option></select><button class="primary-btn full-width" type="submit">Add to demo feed <span>↗</span></button><p class="form-message" id="formMessage"></p></form></dialog>
+  <dialog id="playerDialog" class="modal player-modal"><div class="modal-head"><div><p class="eyebrow">NOW PLAYING</p><h2 id="playerTitle">Video</h2></div><button class="close-btn" id="playerClose">×</button></div><video id="playerVideo" controls playsinline></video><p class="player-note" id="playerNote">Demo video preview</p></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
